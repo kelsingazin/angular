@@ -1,4 +1,4 @@
-import {Component, ContentChild, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {Post} from "../app.component";
 
 @Component({
@@ -11,7 +11,7 @@ export class PostFormComponent implements OnInit {
   @Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>()
   @ViewChild('titleInput', {static: false}) inputTitleRef:ElementRef
   @ViewChild('textInput', {static:false}) inputTextRef: ElementRef
-  @ContentChild('info') infoRef: ElementRef
+
 
   title = ''
   text =''
@@ -20,7 +20,6 @@ export class PostFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.infoRef.nativeElement)
   }
 
   addPost(){
